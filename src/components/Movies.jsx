@@ -76,7 +76,7 @@ const Movies = () => {
       return;
     }
     await axios
-      .post(`${server}/wishlist` + movieDetails, { withCredentials: true })
+      .post(`${server}/wishlist/` + movieDetails, { withCredentials: true })
       .then((res) => {
         console.log(res.data);
         dispatch(wishlistActions.addToWishlist(res.data));
