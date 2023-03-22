@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BiMovie } from "react-icons/bi";
 import { HiStar } from "react-icons/hi";
@@ -26,6 +26,7 @@ const Header = () => {
   };
 
   const { wishlist } = useSelector((state) => state.wishlist);
+  useEffect(() => {}, [wishlist]);
 
   return (
     <nav className={`navbar ${show && "header_black"} h-nav-class`}>
