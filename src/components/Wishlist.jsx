@@ -4,6 +4,7 @@ import WishListCard from "./Cards/WishListCard";
 import ErrorPage from "./ErrorPage";
 import axios from "axios";
 import { wishlistActions } from "../redux/wishlistSlice";
+import { server } from "..";
 
 const Wishlist = () => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -13,7 +14,7 @@ const Wishlist = () => {
   useEffect(() => {
     const fetchWishlist = async () => {
       await axios
-        .get("http://localhost:4000/api/wishlist", {
+        .get(`${server}/wishlist`, {
           withCredentials: true,
           headers: {
             Authorization: `Bearer ${user.token}`,

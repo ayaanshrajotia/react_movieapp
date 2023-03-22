@@ -7,6 +7,7 @@ import MovieCardList from "./MovieCardList";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { wishlistActions } from "../redux/wishlistSlice";
+import { server } from "..";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     const fetchWishlist = async () => {
       await axios
-        .get("http://localhost:4000/api/wishlist", {
+        .get(`${server}/wishlist`, {
           withCredentials: true,
           headers: {
             Authorization: `Bearer ${user.token}`,

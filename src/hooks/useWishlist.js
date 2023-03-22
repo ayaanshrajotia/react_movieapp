@@ -1,4 +1,5 @@
 import axios from "axios";
+import { server } from "..";
 
 export const useWishlist = () => {
   const addWishlist = async ({ id, title, posterPath, releaseDate, vote }) => {
@@ -22,7 +23,7 @@ export const useWishlist = () => {
 
   const removeWishlist = async (id) => {
     await axios
-      .delete("http://localhost:4000/api/wishlist/" + id, {
+      .delete(`${server}/wishlist/` + id, {
         withCredentials: true,
       })
       .then((res) => console.log(res.data))

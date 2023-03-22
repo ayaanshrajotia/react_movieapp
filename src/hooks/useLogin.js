@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { server } from "..";
 import { authActions } from "../redux/authSlice";
 
 export const useLogin = () => {
@@ -12,7 +13,7 @@ export const useLogin = () => {
     setIsLoading(true);
     await axios
       .post(
-        "http://localhost:4000/api/user/login",
+        `${server}/user/login`,
         { email, password },
         { withCredentials: true }
       )
