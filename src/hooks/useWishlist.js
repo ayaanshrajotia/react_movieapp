@@ -24,6 +24,9 @@ export const useWishlist = () => {
   const removeWishlist = async (id) => {
     await axios
       .delete(`${server}/wishlist/` + id, {
+        headers: {
+          "Content-Type": "application/json",
+        },
         withCredentials: true,
       })
       .then((res) => console.log(res.data))

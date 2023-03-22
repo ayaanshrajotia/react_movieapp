@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SeriesCard from "./Cards/SeriesCard";
 import { wishlistActions } from "../redux/wishlistSlice";
 import axios from "axios";
+import { server } from "..";
 
 const SeriesCardList = ({ title, fetchUrl, largeRow }) => {
   const [movies, setMovies] = useState([]);
@@ -32,7 +33,7 @@ const SeriesCardList = ({ title, fetchUrl, largeRow }) => {
       return;
     }
     await axios
-      .post("http://localhost:4000/api/wishlist/", movieDetails, {
+      .post(`${server}/wishlist/`, movieDetails, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },

@@ -18,6 +18,7 @@ const Wishlist = () => {
           withCredentials: true,
           headers: {
             Authorization: `Bearer ${user.token}`,
+            "Content-Type": "application/json",
           },
         })
         .then((res) => {

@@ -15,7 +15,12 @@ export const useSignup = () => {
       .post(
         `${server}/user/signup`,
         { email, password },
-        { withCredentials: true }
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
       )
       .then((res) => {
         // save the user in local storage

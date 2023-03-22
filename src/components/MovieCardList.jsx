@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { wishlistActions } from "../redux/wishlistSlice";
 import { useWishlist } from "../hooks/useWishlist";
 import axios from "axios";
+import { server } from "..";
 
 const CardList = ({ title, fetchUrl, largeRow }) => {
   const { addWishlist } = useWishlist();
@@ -35,7 +36,7 @@ const CardList = ({ title, fetchUrl, largeRow }) => {
     }
     
     await axios
-      .post("http://localhost:4000/api/wishlist/", movieDetails, {
+      .post(`${server}/wishlist`, movieDetails, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
