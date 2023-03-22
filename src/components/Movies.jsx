@@ -80,7 +80,8 @@ const Movies = () => {
       .then((res) => {
         console.log(res.data);
         dispatch(wishlistActions.addToWishlist(res.data));
-        toast.success(res.data.message);
+        toast.success("Added to wishlist");
+
       })
       .catch((err) => {
         console.log(err.message);
