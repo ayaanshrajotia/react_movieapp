@@ -1,0 +1,65 @@
+@import "colors";
+
+*:focus {
+    overflow: none;
+    border: none;
+}
+
+.search_bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 18px;
+}
+
+@media only screen and (max-width: 850px) {
+    .search_bar {
+        padding: 20px 0;
+    }
+}
+
+input {
+    width: 200px;
+    border: none;
+    outline: none;
+    height: 35px;
+    padding: 6px 10px;
+    font-size: 1rem;
+    font-family: "Open sans", sans-serif;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid $bgcolor1;
+    border-right: transparent;
+
+}
+
+input[type="text"],
+textarea {
+    background-color: none;
+    border-right: transparent;
+
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    border: none;
+    border: 1px solid $bgcolor1;
+    border-right: transparent;
+
+
+}
+
+.search_logo {
+    padding: 6px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: white;
+    height: 35px;
+    width: 35px;
+    background: $bgcolor2;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid $bgcolor1;
+}
+
+.search_logo:hover {
+    background-color: rgb(145, 34, 34);
+}

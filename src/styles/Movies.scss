@@ -1,0 +1,195 @@
+@import "colors";
+
+.movies__home {
+    box-sizing: border-box;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    z-index: -10;
+}
+
+.movies__filter_section {
+    background-color: $bgcolor1;
+    width: 21vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    > h2 {
+        margin: 14px;
+        color: white;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-align: center;
+        padding: 20px 0px;
+    }
+}
+
+.movies__filter__box {
+    background-color: rgb(78, 78, 78);
+    margin-left: 3vw;
+    max-width: 15vw;
+    padding-top: 5px;
+    display: grid;
+    border-radius: 6px;
+    padding-bottom: 5px;
+
+    > .movies__filter__link {
+        cursor: pointer;
+        list-style: none;
+        padding: 1rem 1.5rem;
+        font-family: "Alexandria", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: white;
+    }
+
+    .movies__filter__link:hover {
+        background-color: rgb(48, 48, 48);
+    }
+}
+
+.movies__filter__box::-webkit-scrollbar {
+    display: none;
+}
+
+.movies__section {
+    padding: 20px 28px;
+    // background: rgb(48, 48, 48);
+    width: 79vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1000px) {
+    .movies__home {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .movies__filter_section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100vw;
+        align-items: center;
+        height: 10vh;
+        top: 70px;
+        z-index: 100;
+        gap: -10px;
+        > h2 {
+            font-size: 1.6rem;
+            margin-left: 10px;
+        }
+    }
+
+    .movies__filter__box {
+        max-width: 60vw;
+        background-color: transparent;
+        margin-top: 0px;
+        display: flex;
+        // justify-content: flex-start;
+        overflow-x: scroll;
+
+        > .movies__filter__link {
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            background-color: rgb(78, 78, 78);
+            border-radius: 6px;
+            margin: 0px 5px;
+            font-size: 1rem;
+        }
+
+        .movies__filter__link:hover {
+            background-color: rgb(48, 48, 48);
+        }
+    }
+
+    .movies__filter__box::-webkit-scrollbar {
+        display: none;
+    }
+
+    .movies__section {
+        margin-top: 80px;
+        padding-left: 10px;
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .movies__filter__box {
+        height: 300px;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .movies__filter_section {
+        display: none;
+    }
+
+    .movies__home {
+        flex-direction: column-reverse;
+    }
+
+    .movies__filter_section {
+        // position: sticky;
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-evenly;
+        width: 100vw;
+        align-items: center;
+        height: 10vh;
+        top: 70px;
+        padding: 10px;
+        z-index: 10;
+        gap: -10px;
+        > h2 {
+            font-size: 1.2rem;
+            margin-left: 25px;
+        }
+    }
+
+    .movies__filter__box {
+        max-width: 60vw;
+        background-color: transparent;
+        margin-top: 0px;
+        margin-right: 4vw;
+        display: flex;
+        // justify-content: flex-start;
+        overflow-x: scroll;
+
+        > .movies__filter__link {
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            background-color: rgb(78, 78, 78);
+            height: 40px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border-radius: 6px;
+            margin: 0px 5px;
+            font-size: 0.8rem;
+            padding-left: 0.9rem;
+            padding-right: 0.9rem;
+        }
+
+        .movies__filter__link:hover {
+            background-color: rgb(48, 48, 48);
+        }
+    }
+
+    .movies__filter__box::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .movies__filter_section > h2 {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,45 @@
+@import "colors";
+
+.character_card {
+    box-sizing: border-box;
+    background-color: rgb(59, 59, 59);
+    width: 138px;
+    height: 280px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.character_card__profile {
+    overflow: hidden;
+    border-radius: 10px 10px 0px 0px;
+    height: 175px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+
+    > img {
+        object-fit: cover;
+        width: 138px;
+        height: 100%;
+    }
+}
+
+.character_card__details {
+    overflow: hidden;
+    padding: 5px 10px;
+    padding-top: 7px;
+
+    > p {
+        color: white;
+        font-family: "Alexandria", sans-serif;
+    }
+
+    > .character_name {
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+
+    > .character__details {
+        margin-top: 3px;
+        font-size: 0.9rem;
+    }
+}

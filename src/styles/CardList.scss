@@ -1,0 +1,88 @@
+@import "colors";
+
+.row__title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2.6rem;
+    letter-spacing: 0.8px;
+    color: $textcolor1;
+    // margin-bottom: 0px;
+    margin-left: 30px;
+    // margin-top: 0px;
+}
+
+.section {
+    height: 330px;
+
+    // background: darkred;
+    // padding: 0px 5%;
+}
+
+.movies__poster {
+    padding: 10px;
+    padding-left: 20px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 320px;
+    margin-top: -15px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.movies__poster::-webkit-scrollbar {
+    max-width: 0.1rem;
+}
+
+.movies__poster::-webkit-scrollbar-track {
+    background-color: black;
+    width: 10px;
+}
+
+.movies__poster::-webkit-scrollbar-thumb {
+    background-color: rgb(44, 44, 44);
+    width: 10px;
+}
+
+.arrow {
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.arrow-left {
+    left: 0px;
+    // padding-left: -5px;
+}
+
+.arrow-right {
+    right: 0px;
+    // margin-right: -5px;
+}
+
+@media screen and (max-width: 1000px) {
+    .movies__poster::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .row__title {
+        font-size: 2rem;
+    }
+
+    .movies__poster {
+        height: 260px;
+    }
+
+    .arrow {
+        font-size: 40px;
+    }
+
+    .movies__poster::-webkit-scrollbar {
+        display: none;
+    }
+}

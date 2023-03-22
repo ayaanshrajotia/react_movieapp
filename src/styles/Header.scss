@@ -1,0 +1,198 @@
+@import "colors";
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  height: 70px;
+  // margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1000px) {
+  .navbar {
+    transition: all 0.2s ease-in;
+  }
+}
+
+.logo {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  font-size: 45px;
+  margin-right: 18px;
+  color: $textcolor1;
+  margin: 0px 12px;
+  top: 12px;
+  left: 30px;
+}
+
+.header {
+  height: 70px;
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 10px 5%;
+  // margin-bottom: 20px;
+}
+
+.header_black {
+  background-color: $bgcolor2;
+  .link:hover {
+    background-color: $bgcolor1;
+    padding: 19px 16px;
+  }
+}
+.link {
+  font-size: 22px;
+  text-decoration: none;
+  color: $textcolor1;
+  padding: 20px 16px;
+  text-transform: uppercase;
+  height: 100%;
+  position: relative;
+}
+
+.logout_button {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wishlist_icon {
+  font-size: 34px;
+  text-decoration: none;
+  color: $textcolor1;
+  padding: 20px 16px;
+  text-transform: uppercase;
+  height: 100%;
+  position: relative;
+  > p {
+    position: absolute;
+    right: 5px;
+    top: 18px;
+    background-color: $bgcolor2;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    font-size: 0.8rem;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.wishlist_icon_red > p {
+  background-color: $bgcolor1;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > .logo {
+    font-size: 26px;
+  }
+}
+
+.user {
+  padding-top: 8px;
+  cursor: pointer;
+  font-size: 35px;
+  color: $textcolor1;
+  margin: 0 5px;
+}
+
+.user_link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.link:hover {
+  background-color: $bgcolor2;
+}
+
+@media screen and (min-width: 1000px) {
+  .link:hover {
+    transition: 0.25s;
+  }
+}
+
+.burger {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 24px;
+  top: 22px;
+}
+
+.line {
+  width: 28px;
+  background: white;
+  height: 4px;
+  margin: 4px 3px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 850px) {
+  .header,
+  .header__left,
+  .header__right {
+    flex-direction: column;
+  }
+
+  .header {
+    background-color: $bgcolor2;
+    padding-top: 60px;
+  }
+
+  .navbar {
+    background-color: $bgcolor2;
+    // transition: all 0.3s ease-in;
+    margin-bottom: 30px;
+  }
+
+  .logo {
+    font-size: 35px;
+    top: 16px;
+    left: 20px;
+  }
+
+  .link:active {
+    background-color: $bgcolor3;
+  }
+
+  .header__left {
+    margin-right: 30px;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .v-class {
+    visibility: hidden;
+  }
+
+  .h-class {
+    height: 468px;
+  }
+
+  .wishlist_icon > p {
+    background-color: $bgcolor1;
+  }
+}

@@ -1,0 +1,12 @@
+@import "./styles/colors.scss";
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background-color: $bgcolor3;
+}
