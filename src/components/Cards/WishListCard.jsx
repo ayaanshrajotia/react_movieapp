@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { wishlistActions } from "../../redux/wishlistSlice";
+import { server } from "../..";
 
 const WishListCard = ({
   id,
@@ -19,7 +20,7 @@ const WishListCard = ({
 
   const addToWishlistHandler = async (movieDetails) => {
     await axios
-      .post("http://localhost:4000/api/wishlist/", movieDetails, {
+      .post(`${server}/wishlist`, movieDetails, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },

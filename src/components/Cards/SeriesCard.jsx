@@ -5,6 +5,7 @@ import { useWishlist } from "../../hooks/useWishlist";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
+import { server } from "../..";
 
 // const getPosterPath = (posterPath) => {
 //     return `http://www.themoviedb.org/t/p/w500/${posterPath}`;
@@ -34,7 +35,7 @@ const SeriesCard = ({
 
   const handleRemoveMovies = async () => {
     await axios
-      .delete("http://localhost:4000/api/wishlist/" + id)
+      .delete(`${server}/wishlist` + id)
       .then((res) => {
         dispatch({
           type: "removeFromWishlist",
