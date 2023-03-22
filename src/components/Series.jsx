@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import SeriesCard from "./Cards/SeriesCard";
 import axios from "axios";
 import { wishlistActions } from "../redux/wishlistSlice";
+import { server } from "..";
 
 const TV = () => {
   const [series, setSeries] = useState([]);
@@ -66,14 +67,13 @@ const TV = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
 
-
   const addToWishlistHandler = async (movieDetails) => {
     if (!user) {
       toast.error("Please Login");
       return;
     }
     await axios
-      .post("http://localhost:4000/api/wishlist/" + movieDetails)
+      .post(`${server}/wishlist` + movieDetails)
       .then((res) => {
         console.log(res.data);
         dispatch(wishlistActions.addToWishlist(res.data));

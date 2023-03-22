@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { wishlistActions } from "../redux/wishlistSlice";
+import { server } from "..";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -76,7 +77,7 @@ const Movies = () => {
       return;
     }
     await axios
-      .post("http://localhost:4000/api/wishlist/" + movieDetails)
+      .post(`${server}/wishlist` + movieDetails)
       .then((res) => {
         console.log(res.data);
         dispatch(wishlistActions.addToWishlist(res.data));
