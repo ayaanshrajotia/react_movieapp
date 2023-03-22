@@ -36,7 +36,7 @@ const CardList = ({ title, fetchUrl, largeRow }) => {
     }
 
     await axios
-      .post(`${server}/wishlist`, movieDetails, {
+      .post(`${server}/wishlist/`, movieDetails, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -46,7 +46,6 @@ const CardList = ({ title, fetchUrl, largeRow }) => {
         console.log(res.data);
         dispatch(wishlistActions.addToWishlist(res.data));
         toast.success("Added to wishlist");
-      
       })
       .catch((err) => {
         console.log(err.message);

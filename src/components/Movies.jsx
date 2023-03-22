@@ -76,12 +76,11 @@ const Movies = () => {
       return;
     }
     await axios
-      .post(`${server}/wishlist/` + movieDetails, { withCredentials: true })
+      .post(`${server}/wishlist/${movieDetails}`, { withCredentials: true })
       .then((res) => {
         console.log(res.data);
         dispatch(wishlistActions.addToWishlist(res.data));
         toast.success("Added to wishlist");
-
       })
       .catch((err) => {
         console.log(err.message);
