@@ -34,6 +34,7 @@ const SeriesCardList = ({ title, fetchUrl, largeRow }) => {
     }
     await axios
       .post(`${server}/wishlist/`, movieDetails, {
+        withCredentials: true,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },

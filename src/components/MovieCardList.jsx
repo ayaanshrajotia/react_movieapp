@@ -34,9 +34,10 @@ const CardList = ({ title, fetchUrl, largeRow }) => {
       toast.error("Please Login");
       return;
     }
-    
+
     await axios
       .post(`${server}/wishlist`, movieDetails, {
+        withCredentials: true,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -53,7 +54,7 @@ const CardList = ({ title, fetchUrl, largeRow }) => {
 
   const removeFromWishlistHandler = async (movieId) => {
     await axios
-      .delete("http://localhost:4000/api/wishlist/" + movieId)
+      .delete(`${server}/wishlist/` + movieId)
       .then((res) => {
         dispatch(wishlistActions.removeFromWishlist(movieId));
         toast.error("Removed from wishlist");

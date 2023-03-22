@@ -21,6 +21,7 @@ const WishListCard = ({
   const addToWishlistHandler = async (movieDetails) => {
     await axios
       .post(`${server}/wishlist`, movieDetails, {
+        withCredentials: true,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },

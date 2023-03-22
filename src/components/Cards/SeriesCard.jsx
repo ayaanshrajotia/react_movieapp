@@ -22,7 +22,7 @@ const SeriesCard = ({
   isWishlist,
 }) => {
   const dispatch = useDispatch();
-  
+
   const handleAddMovies = () => {
     addToWishlistHandler({
       id,
@@ -35,7 +35,7 @@ const SeriesCard = ({
 
   const handleRemoveMovies = async () => {
     await axios
-      .delete(`${server}/wishlist` + id)
+      .delete(`${server}/wishlist` + id, { withCredentials: true })
       .then((res) => {
         dispatch({
           type: "removeFromWishlist",
