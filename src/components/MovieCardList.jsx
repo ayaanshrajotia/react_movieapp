@@ -46,6 +46,7 @@ const CardList = ({ title, fetchUrl, largeRow }) => {
         console.log(res.data);
         dispatch(wishlistActions.addToWishlist(res.data));
         toast.success(res.data.message);
+        console.log(res.data.message);
       })
       .catch((err) => {
         console.log(err.message);
