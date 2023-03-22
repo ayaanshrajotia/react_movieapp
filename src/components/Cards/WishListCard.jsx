@@ -38,7 +38,7 @@ const WishListCard = ({
 
   const removeFromWishlistHandler = async (movieId) => {
     await axios
-      .delete("http://localhost:4000/api/wishlist/" + movieId, {
+      .delete(`${server}/wishlist/` + movieId, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
